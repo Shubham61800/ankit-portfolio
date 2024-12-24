@@ -8,6 +8,10 @@
       href="https://media.licdn.com/dms/image/v2/C4E03AQHnHNHGmpPz0w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1608807318118?e=1740614400&v=beta&t=mgPQxcTdgn1wyAzJ_1l0gw6bp_6QXp1n7QWmMRbpcPo"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close"
+    />
     <title>Ankit Joshi - Cyber Security Consultant</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -50,7 +54,7 @@
         <div class="container-wrap wrap-container">
           <div class="img-certificate">
             <img class="about-img" src="image/img2.png" alt="" />
-            <p class="text-orange">Certificates</p>
+            <h3 class="text-orange">Certificates</h3>
             <div class="certificates">
               <div class="certificate">
                 <img
@@ -59,38 +63,36 @@
                   width="60px"
                 />
                 <div class="certificates-detials">
-                  <p class="title">AWS Certified Security - Spacielty</p>
+                  <h5 class="title">AWS Certified Security - Spacielty</h5>
                   <p class="company">Amazon Web Services</p>
                 </div>
               </div>
               <div class="certificate">
                 <img
-                  src="https://media.licdn.com/dms/image/v2/C560BAQER_QnUTXrPJw/company-logo_100_100/company-logo_100_100/0/1670264051233/amazon_web_services_logo?e=1743033600&v=beta&t=2Ytz71pq6beYxJ49pHTzqLbXGzt5JhNQNEbyyACxWAQ"
-                  alt="certificate_logo"
+                  src="https://media.licdn.com/dms/image/v2/C4E0BAQH1moXLdCVHRQ/company-logo_100_100/company-logo_100_100/0/1651140771071/crest_approved_logo?e=1743033600&v=beta&t=s5pwtToFseelM3olm34tZR0dW24Idqi9ohA1yPH-hsk"
                   width="60px"
                 />
                 <div class="certificates-detials">
-                  <p class="title">AWS Certified Security - Spacielty</p>
-                  <p class="company">Amazon Web Services</p>
+                  <h5 class="title">CREST CPSA</h5>
+                  <p class="company">CREST</p>
                 </div>
               </div>
               <div class="certificate">
                 <img
-                  src="https://media.licdn.com/dms/image/v2/C560BAQER_QnUTXrPJw/company-logo_100_100/company-logo_100_100/0/1670264051233/amazon_web_services_logo?e=1743033600&v=beta&t=2Ytz71pq6beYxJ49pHTzqLbXGzt5JhNQNEbyyACxWAQ"
-                  alt="certificate_logo"
+                  src="https://media.licdn.com/dms/image/v2/D560BAQEYCd7CAPbWUg/company-logo_100_100/company-logo_100_100/0/1710419563724/alteredsecurity_logo?e=1743033600&v=beta&t=szxZ-707R8s6SlwbOynTR_bmDSbghrDcN5V1L7GoZkY"
                   width="60px"
                 />
                 <div class="certificates-detials">
-                  <p class="title">AWS Certified Security - Spacielty</p>
-                  <p class="company">Amazon Web Services</p>
+                  <h5 class="title">Certified Red Team Professional</h5>
+                  <p class="company">Altered Security</p>
                 </div>
               </div>
             </div>
-            <a href="certification.html" class="submit-btn">See All</a>
+            <p id="open" class="p-button">See All</p>
           </div>
 
           <div class="about-content">
-            <p class="text-orange">About</p>
+            <h3 class="text-orange">About</h3>
             <div class="about">
               I am experienced Penetration Tester passionate about enhancing
               cybersecurity and safeguarding critical systems. Skilled in
@@ -105,7 +107,7 @@
               contribute to strengthening cybersecurity defenses.
             </div>
             <div class="work-history-container">
-              <p class="text-orange">Work History</p>
+              <h3 class="text-orange">Work History</h3>
               <div class="work-history-card">
                 <h3>Offensive security engineer</h3>
                 <div class="flex-justify">
@@ -146,6 +148,17 @@
         </div>
       </div>
     </section>
+    <div id="overlay-container">
+      <div class="overlay-wrap" id="overlay-wrap">
+        <div class="flex-justify">
+          <h2 class="text-orange">Certificates</h2>
+          <p class="p-button" id="close">
+            <span class="material-symbols-outlined"> close </span>
+          </p>
+        </div>
+        <div class="certificate-container" id="certificate-container"></div>
+      </div>
+    </div>
     <section class="recommendations">
       <h1 class="section-heading">Recommendations</h1>
       <div class="recom-container wrap-container">
