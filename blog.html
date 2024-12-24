@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Container</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      #article-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        margin-top: 4rem;
+      }
+      img{
+        width: 50px;
+      }
+      .article{
+        display: flex;
+        padding: 4rem 1rem;
+        border-bottom: 1px solid #ffffff;
+      }
+      .article:hover{
+        background-color: rgba(242, 100, 25,20);
+      }
+      .article-title{
+        font-weight: 400;
+        font-size: 2rem;
+      }
+      @media (max-width: 768px) {
+        .article{
+          padding: 1rem 2rem;
+        }
+        .article-title{
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+      }
+    </style>
+</head>
+<body>
+  <section class="nav">
+    <div class="nav-container wrap-container">
+      <div class="left-nav">
+        <div class="nav-heading">
+          <h1>Ankit Joshi</h1>
+        </div>
+      </div>
+      <div class="right-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/index.html#about">About me</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+      </div>
+    </div>
+  </section>
+  <section class="articles">
+    <h1 class="section-heading">Blogs</h1>
+    <div id="article-container">
+        <!-- Articles will be rendered here -->
+    </div>
+  </section>
+    <script>
+        // API URL
+        const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@write_errant";
+
+        // Function to fetch and render items
+        async function fetchAndRenderArticles() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                // Get the container
+                const container = document.getElementById('article-container');
+
+                // Check if items exist in the response
+                if (data && data.items) {
+                    data.items.forEach(item => {
+                        // Create article div
+                        const articleDiv = document.createElement('div');
+                        articleDiv.className = 'article';
+                        
+                        //adding link to the article
+                        const artilceLink = document.createElement('a')
+                        artilceLink.href=item.link;
+                        
+                        // Add title
+                        const title = document.createElement('h3');
+                        title.className = 'article-title';
+                        title.textContent = item.title;
+                        artilceLink.appendChild(title);
+
+                        //append link to article
+                        articleDiv.appendChild(artilceLink)
+
+                        // Append article to container
+                        container.appendChild(articleDiv);
+                    });
+                } else {
+                    container.textContent = "No articles found.";
+                }
+            } catch (error) {
+                console.error("Error fetching the API:", error);
+
+                // Display error message in the container
+                const container = document.getElementById('article-container');
+                container.textContent = "Failed to load articles. Please try again later.";
+            }
+        }
+
+        // Call the function
+        fetchAndRenderArticles();
+    </script>
+</body>
+</html>

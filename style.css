@@ -6,6 +6,7 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  line-height: 1.5;
 }
 
 html {
@@ -132,6 +133,7 @@ input {
   position: sticky;
   width: 100%;
   max-width:400px;
+  margin-bottom: 1rem;
 }
 
 .about-container {
@@ -231,6 +233,11 @@ input {
   width: calc(100vw-180px);
   gap: 20px;
   grid-template-columns: repeat(2, 6fr);
+}
+.certificate{
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Media Queries for Responsiveness */
