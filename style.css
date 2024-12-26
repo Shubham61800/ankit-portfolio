@@ -150,6 +150,7 @@ input {
   animation-play-state: paused;
 }
 
+
 .logos-slide {
   display: flex;
   align-items: center;
@@ -160,6 +161,22 @@ input {
 .logos-slide img {
   height: 30px;
   margin: 0 40px;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2rem;
+  overflow: hidden;
+}
+.recom-card {
+  min-width: 40%;
+  height: max-content;
+}
+.logos-slide {
+  gap: 2rem;
+  align-items: flex-start;
 }
 
 .about-section {
