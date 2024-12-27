@@ -277,6 +277,9 @@ input {
 .socials svg {
   fill: white;
 }
+.recommendations svg{
+  color: white;
+}
 
 .socials:hover svg {
   fill: #f26419;
